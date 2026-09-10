@@ -1,0 +1,17 @@
+{
+  "name": "KeyGenSecrets",
+  "short_name": "KeyGenSecrets",
+  "description": "Free online developer crypto toolkit",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#f43f5e",
+  "background_color": "#0f0f0f",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

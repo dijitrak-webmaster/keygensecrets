@@ -81,7 +81,8 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public folder is needed for Vite static assets (sitemap.xml, robots.txt, favicon, etc.)
+# public
 
 # Storybook build outputs
 .out

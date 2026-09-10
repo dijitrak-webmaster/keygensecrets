@@ -1,0 +1,6 @@
+Contact: security@keygensecrets.com
+Expires: 2027-12-31T23:59:59.000Z
+Encryption: https://keys.openpgp.org
+Preferred-Languages: en
+Canonical: https://keygensecrets.com/.well-known/security.txt
+Policy: https://keygensecrets.com/security-policy
