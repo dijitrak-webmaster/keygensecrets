@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { trackWebVitals, trackError } from './lib/analytics';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient();
 
@@ -47,15 +48,17 @@ function RuntimeErrorFallback(props: { error: Error }) {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ErrorBoundary
-      fallbackRender={props => <RuntimeErrorFallback error={props.error} />}
-    >
-      <QueryClientProvider client={queryClient}>
-        <App />
-        <Analytics />
-        <SpeedInsights />
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary
+        fallbackRender={props => <RuntimeErrorFallback error={props.error} />}
+      >
+        <QueryClientProvider client={queryClient}>
+          <App />
+          <Analytics />
+          <SpeedInsights />
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </HelmetProvider>
   </StrictMode>,
 );
 

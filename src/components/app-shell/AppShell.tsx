@@ -5,7 +5,6 @@ import { TopBar } from '../navigation/TopBar';
 import { CommandPalette } from '../navigation/CommandPalette';
 import { ShortcutSheet } from '../navigation/ShortcutSheet';
 import { SeoFooter } from '../seo/SeoFooter';
-import { StructuredData } from '../seo/StructuredData';
 import { AdSlot } from '../ads/AdSlot';
 import { useSidebarState, useFavorites, useRecent } from '../../lib/hooks';
 import { usePageSeo } from '../../lib/seo';
@@ -152,7 +151,6 @@ export function AppShell({ children }: { children: ReactNode }) {
 
             {/* SEO footer with internal links */}
             <SeoFooter />
-            <StructuredData />
           </main>
         </div>
 

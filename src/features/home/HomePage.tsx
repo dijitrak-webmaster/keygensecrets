@@ -4,6 +4,8 @@ import { cn } from '@project/components';
 import { motion } from 'framer-motion';
 import { Search, Sparkles, Shield, Zap, Wifi, WifiOff } from 'lucide-react';
 import { useState } from 'react';
+import { SEO } from '../../components/seo/SEO';
+import { WebSiteStructuredData, SoftwareApplicationStructuredData } from '../../components/seo/StructuredData';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -17,7 +19,28 @@ export default function HomePage() {
     : null;
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <>
+      <SEO
+        title="KeyGenSecrets — Free Online Secret Key, Token & Password Generator"
+        description="Free online developer crypto toolkit — 22+ tools to generate secrets, API keys, JWT tokens, passwords, RSA/ECDSA key pairs, UUIDs, hashes and more. All client-side using Web Crypto API."
+        canonical="https://keygensecrets.com"
+        keywords={[
+          'secret key generator',
+          'API key generator',
+          'JWT secret',
+          'password generator',
+          'UUID generator',
+          'crypto tools',
+          'developer tools',
+          'Web Crypto API',
+          'online cryptography',
+          'client-side encryption',
+        ]}
+      />
+      <WebSiteStructuredData />
+      <SoftwareApplicationStructuredData />
+      
+      <div className="max-w-5xl mx-auto">
       {/* Hero */}
       <div className="mb-10 text-center">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
@@ -108,7 +131,8 @@ export default function HomePage() {
         {' · '}
         Press <kbd className="px-1.5 py-0.5 rounded bg-[hsl(var(--surface-2))] text-muted-foreground/50 font-mono">?</kbd> for keyboard shortcuts
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
